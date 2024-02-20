@@ -1,4 +1,4 @@
-package cmd
+package discord-go
 
 import (
 	"bytes"

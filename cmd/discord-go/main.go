@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/your_cmd/cmd"
+	"github.com/discord-go/cmd"
 )
 
 func main() {
