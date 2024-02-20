@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/your_cmd/cmd"
+	cmd "github.com/muxit-studio/discord-go"
 )
 
 func main() {

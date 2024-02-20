@@ -1,4 +1,4 @@
-module github.com/your_cmd/cmd
+module github.com/muxit-studio/discord-go
 
 go 1.19
 
