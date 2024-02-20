@@ -1,4 +1,4 @@
-module github.com/discord-go/cmd
+module github.com/your_cmd/cmd
 
 go 1.19
 

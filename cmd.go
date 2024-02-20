@@ -1,4 +1,4 @@
-package discord-go
+package cmd
 
 import (
 	"fmt"
