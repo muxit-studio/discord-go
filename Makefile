@@ -1,6 +1,9 @@
 VERSION=0.1.0
 BINARY_NAME=discord-go
 
+update-version:
+	@sed -i "s/const VERSION = \".*\"/const VERSION = \"$(VERSION)\"/" ./cmd.go
+
 test:
 	go test -v ./...
 
@@ -27,7 +30,7 @@ cleanup:
 	rm -rf ./build
 	rm -rf ./release
 
-build: build-amd64 build-arm64
-package: cleanup build package-amd64 package-arm64
+build: cleanup update-version build-amd64 build-arm64
+package: build package-amd64 package-arm64
 
 .PHONY: build test watch package
