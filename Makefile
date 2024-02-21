@@ -1,9 +1,6 @@
 VERSION=v0.1.0
 BINARY_NAME=discord-go
 
-update-version:
-	@sed -i "s/const VERSION = \".*\"/const VERSION = \"$(VERSION)\"/" ./cmd.go
-
 test:
 	go test -v ./...
 
@@ -27,10 +24,6 @@ package-arm64:
 	rm ./build/$(BINARY_NAME) # Clean up
 
 publish:
-	git add .
-	git commit -m "Release $(VERSION)"
-	git push origin main
-
 	@echo "Publishing release to GitHub"
 	gh release create $(VERSION) ./release/* --generate-notes
 
@@ -38,7 +31,7 @@ cleanup:
 	rm -rf ./build
 	rm -rf ./release
 
-build: cleanup update-version build-amd64 build-arm64
+build: cleanup build-amd64 build-arm64
 package: build package-amd64 package-arm64
 package-publish: package publish
 
