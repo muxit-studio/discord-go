@@ -1,4 +1,4 @@
-VERSION=0.1.0
+VERSION=v0.1.0
 BINARY_NAME=discord-go
 
 update-version:
@@ -25,6 +25,10 @@ package-arm64:
 	cp ./build/$(BINARY_NAME)_arm64 ./build/$(BINARY_NAME) # Copy and rename binary
 	zip -j ./release/$(BINARY_NAME)_$(VERSION)_linux_arm64.zip ./build/$(BINARY_NAME) ./LICENSE
 	rm ./build/$(BINARY_NAME) # Clean up
+
+publish:
+	@echo "Publishing release to GitHub"
+	gh release create $(VERSION) ./release/* --generate-notes
 
 cleanup:
 	rm -rf ./build
