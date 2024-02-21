@@ -11,7 +11,7 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
-const VERSION = "v0.1.1"
+const VERSION = "v0.1.0"
 
 func App() *cli.App {
 	return &cli.App{
